@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffd6e7, #f8a5c2);
+  font-family: Georgia, serif;
+  text-align: center;
+  overflow: hidden;
+}
+.card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 25px;
+  width: 280px;
+  box-shadow: 0 10px 30px #d46b91;
+}
+h1 { color: #e75480; }
+p { color: #777; line-height: 1.7; }
+button {
+  background: #ff69a6;
+  color: white;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#message { display: none; }
+.heart {
+  position: absolute;
+  bottom: -30px;
+  animation: float 6s linear infinite;
+}
+@keyframes float {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div style="font-size:50px">💌</div>
+  <h1>For My Girl ❤️</h1>
+  <p>I have a little surprise for you...</p>
+  <button onclick="openCard()">Open Your Gift 💗</button>
+
+  <div id="message">
+    <h2>My Sweet Girl 🌷</h2>
+    <p>
+      You make my world more beautiful.
+      Thank you for being part of my life.
+      I hope this little gift makes you smile.
+      You are so special to me. ❤️
+    </p>
+    <h2>Forever Yours 💕</h2>
+  </div>
+</div>
+
+<script>
+function openCard() {
+  document.getElementById("message").style.display = "block";
+  document.querySelector("button").style.display = "none";
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 500);
+</script>
+</body>
+</html>
